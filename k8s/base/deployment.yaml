@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mantech-demo
-          image: boogi0501/mantech-demo:latest
+          image: boogi0501/mantech-demo:96eb20c
           ports:
             - containerPort: 8080
           envFrom:
