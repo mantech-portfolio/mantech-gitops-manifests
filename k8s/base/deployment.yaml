@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mantech-demo
-          image: ghcr.io/YOUR_GITHUB_ID/mantech-demo:latest
+          image: boogi0501/mantech-demo:latest
           ports:
             - containerPort: 8080
           envFrom:
