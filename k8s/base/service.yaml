@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mantech-demo-svc
+spec:
+  selector:
+    app: mantech-demo
+  ports:
+    - port: 80
+      targetPort: 8080

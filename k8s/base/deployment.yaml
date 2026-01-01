@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mantech-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mantech-demo
+  template:
+    metadata:
+      labels:
+        app: mantech-demo
+    spec:
+      containers:
+        - name: mantech-demo
+          image: ghcr.io/YOUR_GITHUB_ID/mantech-demo:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: mantech-demo-config
+            - secretRef:
+                name: mantech-demo-secret
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
